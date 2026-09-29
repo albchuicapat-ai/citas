@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salud Centro - Confirmación de Cita</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <div class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6">
+        
+        <!-- Mensaje cuando se ingresa directo sin datos -->
+        <div id="mensajeSinDatos" class="alert alert-danger shadow-sm d-none" role="alert">
+          <h4 class="alert-heading">Acceso restringido</h4>
+          <p>No se encontraron datos de ninguna solicitud de cita registrada.</p>
+          <hr>
+          <a href="cita.html" class="btn btn-outline-danger">Volver al formulario de registro</a>
+        </div>
+
+        <!-- Tarjeta de confirmación con datos recuperados -->
+        <div id="cardResumen" class="card shadow-sm d-none">
+          <div class="card-header bg-success text-white text-center py-3">
+            <h1 class="h4 mb-0">Resumen de la Solicitud</h1>
+            <small>Verifique los datos de su cita</small>
+          </div>
+          <div class="card-body p-4">
+            <ul class="list-group list-group-flush mb-4">
+              <li class="list-group-item d-flex justify-content-between">
+                <strong>Paciente:</strong> <span id="resNombre"></span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between">
+                <strong>Correo:</strong> <span id="resEmail"></span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between">
+                <strong>Especialidad:</strong> <span id="resEspecialidad"></span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between">
+                <strong>Fecha:</strong> <span id="resFecha"></span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between">
+                <strong>Horario:</strong> <span id="resHorario"></span>
+              </li>
+            </ul>
+
+            <div class="d-grid gap-2">
+              <button id="btnCorregir" class="btn btn-warning text-dark">Corregir / Modificar Solicitud</button>
+              <a href="cita.html" class="btn btn-outline-secondary">Registrar otra cita</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="confirmacion.js"></script>
+</body>
+</html>
